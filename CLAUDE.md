@@ -142,11 +142,21 @@ circleCollide(x1, y1, r1, x2, y2, r2) {
 
 ## Development Workflow
 
+### Critical: Commit and Push Regularly to GitHub
+
+**IMPORTANT**: After every logical change or completed task, you MUST:
+1. Commit your work locally with a clear commit message
+2. Push to GitHub immediately (`git push origin main`)
+
+This ensures we never lose progress and can easily revert changes if needed. Treat commits as "save points" in development.
+
 ### Making Changes
 1. **Edit files** in `/js/` or `index.html`
 2. **Test in browser** — reload page to see changes (no build step)
-3. **Commit locally**: Clear, descriptive message
-4. **Push to GitHub**: `git push origin main`
+3. **Commit locally** with a clear, descriptive message
+4. **Push to GitHub** — `git push origin main`
+
+Do not wait to accumulate many changes before committing. Commit frequently (every 10-30 minutes of work).
 
 ### Commit Message Style
 Use conventional format:
@@ -156,12 +166,25 @@ fix: Fix [issue] - what was broken, what's fixed
 refactor: Rename [thing] - why
 ```
 
-Example:
+**Examples**:
 ```
 feat: Add new enemy type 'Exploder' - spawns projectiles in burst pattern
 fix: Correct bullet collision radius from 5 to 4 pixels
 refactor: Extract sprite drawing logic into separate function
+docs: Update CLAUDE.md with mobile development notes
 ```
+
+### Typical Workflow
+1. Take on a task (e.g., "Add new level 7")
+2. Make edits to relevant files (e.g., `level.js`, maybe `sprites.js`)
+3. Test in browser to verify it works
+4. `git status` to review changes
+5. `git add` specific files or `git add .` for all changes
+6. `git commit -m "feat: Add level 7 with new enemy combinations"` with clear message
+7. `git push origin main` to save to GitHub
+8. Move to next task
+
+**Never** do multiple independent changes without committing between them. Each logical feature or fix should have its own commit.
 
 ## Common Development Tasks
 
